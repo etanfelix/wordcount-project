@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Word Count</title>
+  </head>
+  <body>
+    <a href="{% url 'home' %}">Back to Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <hr>
+    <h2>You entered:</h2>
+    <p>{{ fulltext }}</p>
+    <h2>The number of words is {{ ctr }}.</h2>
+    <table border="1">
+      <thead>
+        <th>Word</th>
+        <th>Count</th>
+      </thead>
+      {% for word, count in sortedwords %}
+      <tr>
+        <td>{{ word }}</td>
+        <td>{{ count }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <hr>
+  </body>
+</html>
